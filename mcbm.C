@@ -481,6 +481,7 @@ double calcamprice(payofffunc &option, double r, double deltat, mat &stockpaths)
  * @param r0 GSL random number generator
  * @param meanarrival parameter for interarrival times from exponential distribution
  * @param jumpmean 
+ */
 
     
 mat &applyjumps(gsl_rng *r0, double meanarrival, double jumpmean,
@@ -547,6 +548,9 @@ int main()
     mat jumpedprices;
     applyjumps(r0, meanarrival, jumpmean, jumpsig, stockprices,
             jumpedprices);
+    
+    //mat jumped;
+    //applyjumpdiff(r0, .1, 0., .1, stockprices, jumped);
 
 
 
@@ -602,5 +606,3 @@ int main()
 
     return 0;
 }
-    //mat jumped;
-    //applyjumpdiff(r0, .1, 0., .1, stockprices, jumped);
